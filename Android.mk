@@ -47,8 +47,11 @@ ARM_NEON_TESTS_SOURCES = compute_ref.c \
 ARM_NEON_TESTS_REFGCCARM = stm-arm-neon.gccarm
 ARM_NEON_TESTS_EXPECTED_INPUT = expected_input4gcc.txt
 
+# TODO(b/27353392): remove -O0 flag when clang would stop miscompiling
+# arm-neon-tests.
 ARM_NEON_TESTS_CFLAGS = -DREFFILE=\"$(ARM_NEON_TESTS_REFGCCARM)\" \
-                        -DGCCTESTS_FILE=\"$(ARM_NEON_TESTS_EXPECTED_INPUT)\"
+                        -DGCCTESTS_FILE=\"$(ARM_NEON_TESTS_EXPECTED_INPUT)\" \
+                        -O0
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := arm_neon_tests_arm
