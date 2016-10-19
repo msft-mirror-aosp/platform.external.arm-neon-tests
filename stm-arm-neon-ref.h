@@ -661,7 +661,7 @@ static void clean_results (void)
 
 /* Helpers to declare variables of various types  */
 #define DECL_VARIABLE(VAR, T1, W, N)		\
-  VECT_TYPE(T1, W, N) VECT_VAR(VAR, T1, W, N)
+  volatile VECT_TYPE(T1, W, N) VECT_VAR(VAR, T1, W, N)
 
 #define DECL_VARIABLE_64BITS_SIGNED_VARIANTS(VAR)	\
   DECL_VARIABLE(VAR, int, 8, 8);			\
