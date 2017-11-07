@@ -50,6 +50,15 @@ ARM_NEON_TESTS_EXPECTED_INPUT = expected_input4gcc.txt
 ARM_NEON_TESTS_CFLAGS = -DREFFILE=\"$(ARM_NEON_TESTS_REFGCCARM)\" \
                         -DGCCTESTS_FILE=\"$(ARM_NEON_TESTS_EXPECTED_INPUT)\"
 
+ARM_NEON_TESTS_CFLAGS += \
+     -Wall \
+     -Werror \
+     -Wno-format \
+     -Wno-ignored-qualifiers \
+     -Wno-uninitialized \
+     -Wno-unused-function \
+     -Wno-unused-variable \
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := arm_neon_tests_arm
 LOCAL_ARM_MODE := arm
