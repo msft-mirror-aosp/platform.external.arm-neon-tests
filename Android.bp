@@ -213,9 +213,7 @@ cc_defaults {
     enabled: false,
     arch: {
         arm: {
-            neon: {
-                enabled: true,
-            },
+            enabled: true,
         },
     },
 }
